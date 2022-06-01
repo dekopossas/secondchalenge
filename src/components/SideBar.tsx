@@ -1,8 +1,15 @@
 import { Button } from './Button';
 
 import '../styles/sidebar.scss';
+import { GenreResponseProps } from '../App';
 
-export function SideBar({ genres, handleClickButton, selectedGenreId }: any) {
+interface IProps {
+  genres: GenreResponseProps[];
+  handleClickButton: (id: number) => void;
+  selectedGenreId: any;
+}
+
+export function SideBar({ genres, handleClickButton, selectedGenreId }: IProps) {
   // Complete aqui
   return (
     <nav className="sidebar">
@@ -11,7 +18,7 @@ export function SideBar({ genres, handleClickButton, selectedGenreId }: any) {
       </span>
 
       <div className="buttons-container">
-        {genres.map((genre: any) => (
+        {genres.map((genre: GenreResponseProps) => (
           <Button
             key={String(genre.id)}
             title={genre.title}
