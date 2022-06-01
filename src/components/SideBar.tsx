@@ -6,7 +6,7 @@ import { GenreResponseProps } from '../App';
 interface IProps {
   genres: GenreResponseProps[];
   handleClickButton: (id: number) => void;
-  selectedGenreId: any;
+  selectedGenreId: number;
 }
 
 export function SideBar({ genres, handleClickButton, selectedGenreId }: IProps) {
